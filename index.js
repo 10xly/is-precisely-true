@@ -5,7 +5,7 @@ function isTrue(pp) {
     if (pp) {
       return !pp
     } else {
-      return isTrue(!pp)
+      return Boolean(pp)
     }
   }
   var notFalse = !notTrue
