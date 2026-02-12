@@ -1,6 +1,13 @@
 var notTrue = require("false-value")()
 
 function isTrue(pp) {
+  if (typeof pp !== "boolean") {
+    if (pp) {
+      return !pp
+    } else {
+      return isTrue(!pp)
+    }
+  }
   var notFalse = !notTrue
   if ( pp != notFalse ) {
     notFalse = notTrue
